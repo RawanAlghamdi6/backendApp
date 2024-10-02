@@ -4,7 +4,8 @@ WORKDIR /app
 
 COPY . . 
 
-COPY ca-certs/*.crt /usr/local/share/ca-certificates
+COPY ca-certs/*.crt /usr/local/share/ca-certificates/
+
 RUN update-ca-certificates
 
 RUN go build -o main . 
